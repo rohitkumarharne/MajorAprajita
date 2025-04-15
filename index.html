@@ -11,47 +11,103 @@
     <style>
       body {
         font-family: "Segoe UI", sans-serif;
-        background-color: #f0f8ff;
+        background-color: #f5f7fa;
+        color: #2c3e50;
       }
+
+      .navbar {
+        background-color: #ffffff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .navbar-brand {
+        color: #0d47a1 !important;
+      }
+
+      .nav-link {
+        color: #0d47a1 !important;
+        font-weight: 500;
+      }
+
       .hero {
-        background: linear-gradient(135deg, #90caf9, #e1f5fe);
-        padding: 80px 20px;
+        background: linear-gradient(135deg, #0d47a1, #1976d2);
+        padding: 100px 20px;
         text-align: center;
-        color: #1a237e;
+        color: white;
       }
+
       .hero h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
         font-weight: bold;
       }
+
       .hero p {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
         margin-top: 20px;
+        opacity: 0.95;
       }
+
       .features {
-        padding: 60px 0;
+        padding: 70px 0;
       }
+
       .feature-card {
         border: none;
-        border-radius: 12px;
-        background: #ffffff;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        padding: 30px;
-        height: 100%;
+        border-radius: 16px;
+        background: white;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        padding: 35px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      }
+
       .feature-card h5 {
         font-weight: 600;
+        color: #0d47a1;
       }
+
       .cta {
-        background: #1e88e5;
+        background: #0d47a1;
         color: white;
-        padding: 40px 20px;
+        padding: 60px 20px;
         text-align: center;
+      }
+
+      .cta h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .btn-light {
+        font-weight: 600;
+        border-radius: 30px;
+        padding: 10px 25px;
+        color: #0d47a1;
+        background-color: white;
+        border: none;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn-light:hover {
+        background-color: #e3f2fd;
+      }
+
+      footer {
+        background-color: #ffffff;
+        color: #0d47a1;
+        padding: 20px;
+        font-size: 0.95rem;
+        box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.03);
       }
     </style>
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand fw-bold" href="#">Positive Vibes</a>
         <button
@@ -85,13 +141,8 @@
     <section class="hero">
       <div class="container">
         <h1>Welcome to Positive Vibes</h1>
-        <p>
-          Your Partner to Navigate Challenges and Embrace Happiness and Growth!
-        </p>
-        <p>
-          Led by a former Army officer, corporate leader, and intuitive life
-          coach.
-        </p>
+        <p>Your Partner to Navigate Challenges and Embrace Growth!</p>
+        <p>Led by a former Army officer, corporate leader, and life coach.</p>
       </div>
     </section>
 
@@ -100,29 +151,29 @@
       <div class="container">
         <div class="row text-center">
           <div class="col-md-4 mb-4">
-            <div class="feature-card h-100">
+            <div class="feature-card">
               <h5>Customized CV Services</h5>
               <p>
-                Get expertly tailored CVs, especially for armed forces officers
-                and corporate roles.
+                Tailored CVs for armed forces officers and professionals
+                entering corporate life.
               </p>
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="feature-card h-100">
+            <div class="feature-card">
               <h5>Intuitive Counselling</h5>
               <p>
-                Personalized guidance with remedies, mantras, and healing
-                crystals.
+                Personalized guidance with mantras, crystals, and mindful
+                practices.
               </p>
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="feature-card h-100">
+            <div class="feature-card">
               <h5>Life Coaching</h5>
               <p>
-                Support with stress, lifestyle improvement, and non-diet weight
-                loss methods.
+                Support for stress, well-being, and non-diet-based health
+                transformations.
               </p>
             </div>
           </div>
@@ -135,15 +186,15 @@
       <div class="container">
         <h2>Start Your Journey Today</h2>
         <p>
-          Take the first step towards a more joyful and resilient you. Let’s
-          work together.
+          Take the first step toward a more joyful, peaceful, and fulfilled
+          life.
         </p>
         <a href="contact.html" class="btn btn-light mt-3">Contact Us</a>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-light text-center py-4">
+    <footer class="text-center">
       <div class="container">
         <p>&copy; 2025 Positive Vibes. All rights reserved.</p>
       </div>
