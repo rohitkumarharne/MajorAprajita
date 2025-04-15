@@ -11,18 +11,36 @@
     <style>
       body {
         font-family: "Segoe UI", sans-serif;
-        background-color: #f0f8ff;
+        background-color: #f5f7fa;
+        color: #2c3e50;
       }
+
+      .navbar {
+        background-color: #ffffff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .navbar-brand {
+        color: #0d47a1 !important;
+      }
+
+      .nav-link {
+        color: #0d47a1 !important;
+        font-weight: 500;
+      }
+
       .hero {
-        background: linear-gradient(135deg, #90caf9, #e1f5fe);
+        background: linear-gradient(135deg, #0d47a1, #1976d2);
         padding: 80px 20px;
         text-align: center;
-        color: #1a237e;
+        color: white;
       }
+
       .hero h1 {
         font-size: 3rem;
         font-weight: bold;
       }
+
       .feature-card {
         border: none;
         border-radius: 12px;
@@ -30,18 +48,51 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         padding: 30px;
         height: 100%;
+        transition: transform 0.3s ease;
       }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .feature-card h5 {
+        color: #0d47a1;
+        font-weight: 600;
+      }
+
       .cta {
-        background: #1e88e5;
+        background: #0d47a1;
         color: white;
-        padding: 40px 20px;
+        padding: 50px 20px;
         text-align: center;
+      }
+
+      .cta .btn {
+        background-color: #ffffff;
+        color: #0d47a1;
+        font-weight: 600;
+        padding: 12px 25px;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+      }
+
+      .cta .btn:hover {
+        background-color: #e3f2fd;
+      }
+
+      footer {
+        background-color: #ffffff;
+        color: #0d47a1;
+        padding: 20px;
+        text-align: center;
+        font-size: 0.95rem;
+        border-top: 3px solid #1976d2;
       }
     </style>
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand fw-bold" href="#">Positive Vibes</a>
         <button
@@ -80,7 +131,7 @@
     </section>
 
     <!-- Services Section -->
-    <section class="container mt-5">
+    <section class="container my-5">
       <div class="row text-center">
         <div class="col-md-4 mb-4">
           <div class="feature-card h-100">
@@ -120,12 +171,12 @@
           Contact us to get started on a path to a healthier, happier, and more
           successful life!
         </p>
-        <a href="contact.html" class="btn btn-light mt-3">Contact Us</a>
+        <a href="contact.html" class="btn mt-3">Contact Us</a>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-light text-center py-4">
+    <footer>
       <div class="container">
         <p>&copy; 2025 Positive Vibes. All rights reserved.</p>
       </div>
