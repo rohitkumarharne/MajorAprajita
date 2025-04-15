@@ -12,42 +12,100 @@
     <style>
       body {
         font-family: "Segoe UI", sans-serif;
-        background-color: #f0f8ff;
+        background-color: #f5f7fa;
+        color: #2c3e50;
       }
+
+      .navbar {
+        background-color: #ffffff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .navbar-brand {
+        color: #0d47a1 !important;
+      }
+
+      .nav-link {
+        color: #0d47a1 !important;
+        font-weight: 500;
+      }
+
       .contact-header {
-        background: linear-gradient(135deg, #90caf9, #e1f5fe);
+        background: linear-gradient(135deg, #0d47a1, #1976d2);
         padding: 80px 20px;
         text-align: center;
-        color: #1a237e;
+        color: white;
       }
+
+      .contact-form {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .contact-form h4 {
+        color: #0d47a1;
+        margin-bottom: 25px;
+        font-weight: 600;
+      }
+
       .contact-form input,
       .contact-form textarea {
         margin-bottom: 15px;
         width: 100%;
-        padding: 15px;
+        padding: 14px;
         border-radius: 8px;
         border: 1px solid #ccc;
       }
+
       .contact-form button {
-        background-color: #1e88e5;
+        background-color: #0d47a1;
         color: white;
-        padding: 15px 20px;
+        padding: 12px 20px;
         border-radius: 8px;
         border: none;
         cursor: pointer;
         width: 100%;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
       }
+
+      .contact-form button:hover {
+        background-color: #1565c0;
+      }
+
+      .export-button {
+        background-color: #388e3c;
+        color: white;
+        margin-top: 10px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: none;
+        width: 100%;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .export-button:hover {
+        background-color: #2e7d32;
+      }
+
       footer {
-        background-color: #f0f8ff;
-        color: #1a237e;
+        background-color: #ffffff;
+        color: #0d47a1;
         padding: 20px;
         text-align: center;
+        border-top: 3px solid #1976d2;
+        font-size: 0.95rem;
+        box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.03);
       }
     </style>
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand fw-bold" href="#">Positive Vibes</a>
         <button
@@ -115,7 +173,7 @@
               ></textarea>
               <button type="submit">Send Message</button>
             </form>
-            <button id="exportButton" class="btn btn-success mt-3">
+            <button id="exportButton" class="export-button">
               Export to Excel
             </button>
           </div>
@@ -132,29 +190,24 @@
       // Load existing data from localStorage
       let contactData = JSON.parse(localStorage.getItem("contactData")) || [];
 
-      // Function to handle form submission
+      // Handle form submission
       document
         .getElementById("contactForm")
         .addEventListener("submit", function (e) {
           e.preventDefault();
 
-          // Collect form data
-          var name = document.getElementById("name").value;
-          var email = document.getElementById("email").value;
-          var message = document.getElementById("message").value;
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const message = document.getElementById("message").value;
 
-          // Store the data into the contactData array
           contactData.push([name, email, message]);
-
-          // Save the updated contact data back to localStorage
           localStorage.setItem("contactData", JSON.stringify(contactData));
 
-          // Clear the form
           document.getElementById("contactForm").reset();
           alert("Message sent successfully!");
         });
 
-      // Function to export all data into an Excel file
+      // Export to Excel
       document
         .getElementById("exportButton")
         .addEventListener("click", function () {
@@ -163,20 +216,14 @@
             return;
           }
 
-          // Add headers to the data
-          var dataWithHeaders = [
-            ["Name", "Email", "Message"], // Headers
-            ...contactData, // All stored data
+          const dataWithHeaders = [
+            ["Name", "Email", "Message"],
+            ...contactData,
           ];
 
-          // Create a new workbook
-          var wb = XLSX.utils.book_new();
-          var ws = XLSX.utils.aoa_to_sheet(dataWithHeaders);
-
-          // Add worksheet to workbook
+          const wb = XLSX.utils.book_new();
+          const ws = XLSX.utils.aoa_to_sheet(dataWithHeaders);
           XLSX.utils.book_append_sheet(wb, ws, "Contact Data");
-
-          // Generate Excel file and prompt download
           XLSX.writeFile(wb, "contact_data.xlsx");
         });
     </script>
